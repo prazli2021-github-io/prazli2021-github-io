@@ -89,7 +89,7 @@
                         if (complete == $files.length) {
                             $($dropbox).html("Or drop here.");
                             $progress.hide().find(".bar").css({width: 0});
-                            viewAlbum("u");
+                            viewAlbum();
                         } else {
                             var percentComplete = (complete / $files.length) * 100;
                             $progress.show().find(".bar").css({width: percentComplete.toString() + '%'});

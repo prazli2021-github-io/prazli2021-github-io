@@ -4,7 +4,7 @@ function getHtml(template) {
 }
 
 // Show the photos that exist in an album.
-function viewAlbum(albumName) {
+function viewAlbum() {
   window.fetch("https://sfo3.digitaloceanspaces.com/prazli2021")
         .then(response => response.text())
         .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
