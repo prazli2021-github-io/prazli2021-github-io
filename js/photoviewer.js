@@ -16,7 +16,7 @@ function runLightGallery(imageKeys) {
   jQuery("#lightGallery")
   .justifiedGallery({
     captions: false,
-    lastRow: "hide",
+    lastRow: "center",
     rowHeight: 180,
     margins: 5
   });
@@ -34,12 +34,9 @@ function viewAlbum() {
             const key = item.textContent;
             if (regex.test(key)) {
               imageKeys.push(key);
-
-              if (imageKeys.length == 20) {
-                break;
-              }
             }
           }
+          imageKeys = imageKeys.reverse().slice(0, 20);
 
           runLightGallery(imageKeys);
         });
