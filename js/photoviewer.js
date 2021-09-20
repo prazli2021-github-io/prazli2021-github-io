@@ -9,33 +9,36 @@ function viewAlbum() {
         .then(response => response.text())
         .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
         .then(data => {
-          var imageURLs = []
+          var imageKeys = []
           for (let item of data.getElementsByTagName("Key")) {
             const regex = new RegExp('^u/.+$');
             const key = item.textContent;
             if (regex.test(key)) {
-              const photoUrl = "https://do-cdn.prazli.com/" + key;
-              imageURLs.push(photoUrl);
+              // const photoUrl = "https://do-cdn.prazli.com/" + key;
+              imageKeys.push(key);
             }
           }
           
-          const html = imageURLs.map(function(photoUrl) {
+          const html = imageKeys.map(function(key) {
             return getHtml([
-            '<span>',
-              '<div>',
-                '<br/>',
-                '<img style="width:128px;height:128px;" src="' + photoUrl + '"/>',
-              '</div>',
-            '</span>',
+              '<a href="' + "https://do-cdn.prazli.com/" + key + '"/>',
+              '<img src="' + "https://do-cdn.prazli.com/" + key + '"/>',
             ]);
           });
 
-        var htmlTemplate = [
-          '<div>',
-            getHtml(html),
-          '</div>',
-        ]
-        document.getElementById('viewer').innerHTML = getHtml(htmlTemplate);
-        document.getElementsByTagName('img')[0].setAttribute('style', 'display:none;');
+          const galleriaData = imageKeys.map(function(key) {
+            return {
+              big: "https://do-cdn.prazli.com/" + key,
+              thumb: "https://do-cdn.prazli.com/cdn-cgi/image/quality=10/" + key,
+            };
+          });
+
+          // document.getElementById('viewer').innerHTML = html.join("\n");
+          // document.getElementsByTagName('img')[0].setAttribute('style', 'display:none;');
+
+          Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js');
+          Galleria.run('.galleria', {
+            dataSource: galleriaData
+          });
         });
 }

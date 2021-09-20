@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Prazli2021</title>
+        <title>Galleria</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
         <style>
             body {
                 padding-top: 60px;
@@ -28,9 +28,9 @@
             /* highlight latest upload */
             #filename a:first-of-type { background-color: #e1f57b; }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
 
-        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+        <script src="/js/vendor/modernizr-2.6.1.min.js"></script>
     </head>
     <body>
 
@@ -48,35 +48,7 @@
 
         <div class="container">
 
-            <div class="hero-unit">
-                <div class="row">
-                    <form action="#" id="uploader" class="form-inline" method="POST" enctype="multipart/form-data">
-                        <div class="span3 offset3">
-                            <h2>Files</h2>
-                            <p><input type="file" name="file" placeholder="Choose a file…" id="file" multiple/></p>
-
-                            <div id="dropbox">Or Drop Here</div>
-
-                            <div class="progress progress-striped active" style="display: none;">
-                                <div class="bar" style="width: 0%;"></div>
-                            </div>
-
-                            <p><input type="submit" value="Upload" class="btn btn-primary btn-large" /></p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="row">
-               <div class="span12">
-                   <h2>File history</h2>
-                   <p id="filename"></p>
-                   <p><a href="#" data-action="clear" class="btn">clear history</a></p>
-               </div>
-            </div>
-
             <h1>Gallery</h1>
-            <div id="viewer" />
             <div class="galleria" />
             <hr>
 
@@ -91,13 +63,8 @@
         <script src="/js/vendor/bootstrap.min.js"></script>
         <script src="/js/vendor/moment.min.js"></script>
         <script src="/js/vendor/fetch.umd.js"></script>
-        <script src="/js/main.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/galleria.min.js" integrity="sha512-vRKUU1GOjCKOTRhNuhQelz4gmhy6NPpB8N41c7a36Cxl5QqKeB9VowP8S7x8Lf3B8vZVURBxGlPpvyiRHh+CKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js" integrity="sha512-Yu/Sp7jan7l6Za2PAupZdSryGrcR26EUaNEy6tYecpRXroJUe/RdeSpf5POT38bycEl85ZMqs5gZpZ1DiYYKOw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.css" integrity="sha512-tn6NeTPlJk5P9womd4AZoPuqlocS/4h8ezOLqPBd+wGo0aNJ6mUuQ8TRb+k3RKNvM9kt0pVUJGUv2HPOO7YfVA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
         <script src="/js/photoviewer.js"></script>
         <script>viewAlbum();</script>
