@@ -3,20 +3,23 @@ function getHtml(template) {
   return template.join('\n');
 }
 
-function runGalleria(imageKeys){
-    const galleriaData = imageKeys.map(function(key) {
-    return {
-      big: "https://do-cdn.prazli.com/" + key,
-      thumb: "https://do-cdn.prazli.com/cdn-cgi/image/quality=10/" + key,
-    };
+function runLightGallery(imageKeys) {
+  const html = imageKeys.map(function(key) {
+    return getHtml([
+      '<a href="https://do-cdn.prazli.com/' + key + '">',
+        '<img src="https://do-cdn.prazli.com/cdn-cgi/image/quality=10/' + key + '" />',
+      '</a>',
+      ]);
   });
 
-  // document.getElementById('viewer').innerHTML = html.join("\n");
-  // document.getElementsByTagName('img')[0].setAttribute('style', 'display:none;');
+  document.getElementById('lightGallery').innerHTML = html.join("\n");
 
-  Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.6.1/themes/folio/galleria.folio.min.js');
-  Galleria.run('.galleria', {
-    dataSource: galleriaData
+  jQuery("#lightGallery")
+  .justifiedGallery({
+    captions: false,
+    lastRow: "hide",
+    rowHeight: 180,
+    margins: 5
   });
 }
 
@@ -34,17 +37,7 @@ function viewAlbum() {
               imageKeys.push(key);
             }
           }
-          
-          const html = imageKeys.map(function(key) {
-            return getHtml([
-              '<a href="' + "https://do-cdn.prazli.com/" + key + '"/>',
-              '<img src="' + "https://do-cdn.prazli.com/" + key + '"/>',
-            ]);
-          });
 
-          runGalleria(imageKeys);
-
-          // document.getElementById('viewer').innerHTML = html.join("\n");
-          // document.getElementsByTagName('img')[0].setAttribute('style', 'display:none;');
+          runLightGallery(imageKeys);
         });
 }
