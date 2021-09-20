@@ -5,7 +5,7 @@ function getHtml(template) {
 function runLightGallery(imageKeys) {
   const html = imageKeys.map(function(key) {
     return getHtml([
-      '<a href="https://do-cdn.prazli.com/' + key + '">',
+      '<a href="https://do-cdn.prazli.com/' + key + '" target="_blank" rel="noopener noreferrer">',
         '<img src="https://do-cdn.prazli.com/cdn-cgi/image/quality=10/' + key + '" />',
       '</a>',
       ]);

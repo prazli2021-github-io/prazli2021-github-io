@@ -81,10 +81,10 @@
                     let closeButtonId = uuidv4();
                     let fileHtml = getHtml([
                         '<div id="' + divId + '" class="uploaded">',
-                          '<i class="far fa-file-pdf"></i>',
+                          '<i class="far fa-file-image"></i>',
                           '<div class="file">',
                             '<div class="file__name">',
-                              '<p><a href="' + file_url + '">' + $file.name + '</a></p>',
+                              '<p><a href="' + file_url + '" target="_blank" rel="noopener noreferrer">' + $file.name + '</a></p>',
                               '<i id="' + closeButtonId + '" class="fas fa-times"></i>',
                             '</div>',
                             '<div id="' + progressBarId + '" class="progress">',
