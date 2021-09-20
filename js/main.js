@@ -64,7 +64,7 @@
             let $file = $files.item(i);
             let file_size = Math.round($file.size * 10 / 1024) / 10;
 
-            fetch("https://s3signer.razvan.workers.dev/").then(response => {
+            fetch("https://s3signer.razvan.workers.dev/?name=" + encodeURIComponent($file.name)).then(response => {
                 response.json().then(res => {
                     let file_url = "https://do-cdn.prazli.com/" + res.fields.key;
 
