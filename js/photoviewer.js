@@ -1,4 +1,3 @@
-// A utility function to create HTML.
 function getHtml(template) {
   return template.join('\n');
 }
@@ -29,12 +28,16 @@ function viewAlbum() {
         .then(response => response.text())
         .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
         .then(data => {
-          var imageKeys = []
+          var imageKeys = [];
           for (let item of data.getElementsByTagName("Key")) {
             const regex = new RegExp('^u/.+$');
             const key = item.textContent;
             if (regex.test(key)) {
               imageKeys.push(key);
+
+              if (imageKeys.length == 20) {
+                break;
+              }
             }
           }
 
