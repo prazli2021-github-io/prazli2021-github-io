@@ -36,7 +36,7 @@ function viewAlbum() {
               imageKeys.push(key);
             }
           }
-          imageKeys = imageKeys.reverse().slice(0, 20);
+          imageKeys = imageKeys.slice(0, 20);
 
           runLightGallery(imageKeys);
         });
