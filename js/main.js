@@ -105,7 +105,7 @@
                         complete += 1;
 
                         linkStorage.add(file_url, $file.name, file_size);
-                        $("#" + progressBarId).remove();
+                        document.getElementById(divId).remove();
 
                         if (complete == $files.length) {
                             viewAlbum();
