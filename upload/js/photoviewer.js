@@ -6,7 +6,7 @@ function runLightGallery(imageKeys) {
   const html = imageKeys.map(function(key) {
     return getHtml([
       '<a href="https://do-cdn.prazli.com/' + key + '" target="_blank" rel="noopener noreferrer">',
-        '<img src="https://do-cdn.prazli.com/cdn-cgi/image/quality=60,format=avif/' + key + '" />',
+        '<img src="https://do-cdn.prazli.com/cdn-cgi/image/quality=60,format=avif,onerror=redirect,metadata=keep/' + key + '" />',
       '</a>',
       ]);
   });
