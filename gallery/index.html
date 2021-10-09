@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html class="no-js" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Prali & Raz</title>
+        <meta name="description" content="Gallery">
+        <meta name="viewport" content="width=device-width">
+        <meta property="og:image" content="https://do-cdn.prazli.com/prazli_preview.JPG" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" integrity="sha256-3h45mwconzsKjTUULjY+EoEkoRhXcOIU4l5YAw2tSOU=" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" integrity="sha256-etrwgFLGpqD4oNAFW08ZH9Bzif5ByXK2lXNHKy7LQGo=" crossorigin="anonymous">
+
+        <style>
+        body {
+          background-image: url("https://www.transparenttextures.com/patterns/lyonnette.png");
+        }
+        .gallery-container {
+          margin: 0 50px;
+        }
+        .gallery-container div {
+          width: 100vh;
+          height: 100vh;
+        }
+        .slick-slide img{
+          /*display: block;*/
+          /*width: 30vh;*/
+          /*height: 95vh;*/
+          object-fit: contain;
+          height: 100%;
+        }
+        </style>
+    </head>
+    <body>
+          <div class="slider gallery-container">
+          </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" integrity="sha256-DHF4zGyjT7GOMPBwpeehwoey18z8uiz98G4PRu2lV0A=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/galleryviewer.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+          $('.gallery-container').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // fade: true,
+            // cssEase: 'linear',
+            infinite: true,
+            lazyLoad: 'progressive',
+            variableWidth: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: false,
+          });
+
+          viewAlbum();
+        });
+        </script>
+
+    </body>
+</html>
